@@ -39,7 +39,7 @@ function OpenConversation({ isSidebarOpen, isDesktop, setIsSidebarOpen }) {
     // console.log(messageRef);
   }
   const [searchBuffer, setSearchBuffer] = useState();
-  async function handleSearch(e) {
+  function handleSearch(e) {
     if (e.target.value !== '') {
       setSearchBuffer(e.target.value);
     } else {
