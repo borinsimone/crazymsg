@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import styled from 'styled-components';
 import OpenConversation from './OpenConversation';
-import { useConversations } from '../context/conversationProvider';
+import { useConversations } from '../context/ConversationProvider';
 import ShowContact from './ShowContact';
-import { useContacts } from '../context/contactsProvider';
+import { useContacts } from '../context/ContactsProvider';
 import { AnimatePresence } from 'framer-motion';
 
 function Dashboard({ id, isDesktop }) {

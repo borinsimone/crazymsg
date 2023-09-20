@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useConversations } from '../context/conversationProvider';
+import { useConversations } from '../context/ConversationProvider';
 
 function Conversations() {
-  const { conversations, selectConversationIndex, setSelectConversationIndex } =
-    useConversations();
+  const { conversations, selectConversationIndex } = useConversations();
   return (
     <Container
       as={motion.div}
@@ -19,7 +18,7 @@ function Conversations() {
           active={selectConversationIndex == index}
           key={index}
           onClick={() => {
-            setSelectConversationIndex(index);
+            selectConversationIndex(index);
           }}
         >
           {conversation.recipients.map((r) => r.name).join(', ')}

@@ -1,8 +1,8 @@
 import { CloseOutline } from '@styled-icons/evaicons-outline';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useContacts } from '../context/contactsProvider';
-import { useConversations } from '../context/conversationProvider';
+import { useContacts } from '../context/ContactsProvider';
+import { useConversations } from '../context/ConversationProvider';
 function NewConversationModal({ closeModal }) {
   const { contacts } = useContacts();
   const { createConversation } = useConversations();

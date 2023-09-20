@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { useContacts } from '../context/contactsProvider';
+import { useContacts } from '../context/ContactsProvider';
 import { motion } from 'framer-motion';
 
 function ShowContact() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { useConversations } from '../context/conversationProvider';
+import { useConversations } from '../context/ConversationProvider';
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion';
 import {
   ChevronDownOutline,
@@ -170,7 +170,7 @@ function OpenConversation({ isSidebarOpen, isDesktop, setIsSidebarOpen }) {
                 // {...itemProps}
                 as={motion.div}
                 searctarget={message.text.includes(searchBuffer)}
-                fromuser={message.fromMe.toString()}
+                fromuser={message.fromMe}
                 style={{
                   backgroundColor: message.text.includes(searchBuffer)
                     ? '#00B0FF'

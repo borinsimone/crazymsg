@@ -1,7 +1,7 @@
 import { CloseOutline } from '@styled-icons/evaicons-outline';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { useContacts } from '../context/contactsProvider';
+import { useContacts } from '../context/ContactsProvider';
 function NewContactModal({ closeModal }) {
   const idRef = useRef();
   const nameRef = useRef();

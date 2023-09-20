@@ -7,7 +7,7 @@ import {
 } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
-import { useContacts } from '../context/contactsProvider';
+import { useContacts } from '../context/ContactsProvider';
 // import { useRaisedShadow } from '../hooks/useRaisedShadow';
 
 function Contacts() {

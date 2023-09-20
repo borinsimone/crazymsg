@@ -4,8 +4,9 @@ import GlobalStyles from '../styles/GlobalStyles';
 import styled from 'styled-components';
 import useLocalStorage from '../hooks/useLocalStorage';
 import Dashboard from './Dashboard';
-import { ContactsProvider } from '../context/contactsProvider';
-import { ConversationsProvider } from '../context/conversationProvider';
+import { ContactsProvider } from '../context/ContactsProvider';
+import { ConversationsProvider } from '../context/ConversationProvider';
+import { SocketProvider } from '../context/socketProvider';
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
@@ -22,14 +23,16 @@ function App() {
   }, []);
   const [id, setId] = useLocalStorage('id');
   const dashboard = (
-    <ContactsProvider>
-      <ConversationsProvider id={id}>
-        <Dashboard
-          id={id}
-          isDesktop={isDesktop}
-        />
-      </ConversationsProvider>
-    </ContactsProvider>
+    <SocketProvider id={id}>
+      <ContactsProvider>
+        <ConversationsProvider id={id}>
+          <Dashboard
+            id={id}
+            isDesktop={isDesktop}
+          />
+        </ConversationsProvider>
+      </ContactsProvider>
+    </SocketProvider>
   );
   return (
     <AppContainer>
